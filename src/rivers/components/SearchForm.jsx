@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ResultCard } from './CardResult';
 
 export const SearchForm = () => {
   const [provincia, setProvincia] = useState('');
@@ -15,7 +16,6 @@ export const SearchForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        
         <label htmlFor="tipoBusqueda">Tipo de búsqueda:</label>
         <select id="tipoBusqueda" value={tipoBusqueda} onChange={(e) => setTipoBusqueda(e.target.value.toLocaleLowerCase())}>
           <option value="rio">Río</option>
@@ -28,16 +28,14 @@ export const SearchForm = () => {
         <button type="submit">Buscar</button>
       </form>
       <div className="card-container">
-        {resultados.map((resultado) => (
-          <div key={resultado.id} className="card">
-            <h3>{resultado.nombre}</h3>
-            <p>Rio: {resultado.rio}</p>
-            <p>Tramo: {resultado.tramo}</p>
-            <p>Media de capturas: {resultado.capturas_rs}</p>
-            <p>Tamaño medio: {resultado.media_capturas}</p>
-           
-          </div>
-        ))}
+      <h3>Te recomendamos:</h3>
+        {resultados.length > 0 ? (
+          resultados.map((resultado) => (
+            <ResultCard key={resultado.id} resultado={resultado} />
+          ))
+        ) : (
+          <p className='error-msg'>No hay resultados</p>
+        )}
       </div>
     </>
   );

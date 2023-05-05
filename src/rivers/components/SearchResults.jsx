@@ -13,7 +13,7 @@ export const SearchResults = ({ searchTerm, category = "" }) => {
     const fetchRivers = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:3000/todos");
+        const response = await fetch("http://localhost:3000/size");
         const data = await response.json();
         setRivers(data);
         setIsLoading(false);

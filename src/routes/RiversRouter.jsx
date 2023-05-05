@@ -7,6 +7,7 @@ import {
   DetailView,
   SearchPage,
   RankingPage,
+  UserFormPage
 } from "../rivers/pages/index";
 import { NavBar } from "../ui/NavBar";
 import { TodayPage } from "../rivers/pages/TodayPage";
@@ -23,6 +24,7 @@ export const RiversRouter = () => {
           <Route path="/mapa" element={<MapPage />} />
           <Route path="/view/:id" element={<DetailView />} />
           <Route path="/ranking" element={<RankingPage />} />
+          <Route path="/user" element={<UserFormPage/>} />
           <Route path="/*" element={<Navigate to={"/rios"} />} />
         </Routes>
       </RiverProvider>

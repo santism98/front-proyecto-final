@@ -14,11 +14,11 @@ export const SearchPage = () => {
   return (
     <>
     <section className="mg-lg">
-      <h1 className="txt-cntr">Search {category}</h1>
-
+      <h1 className="txt-cntr">BUSCA POR TRAMO {category}</h1>
+      
       <SearchForm addSearch={addSearch} />
-      <h3>Results</h3>
-
+      
+      
       {searchTerm && (
         <SearchResults searchTerm={searchTerm} category={category} />
       )}

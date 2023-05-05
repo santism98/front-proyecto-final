@@ -13,7 +13,7 @@ export const useFetch = (url) => {
         setTotal(prodTotal)
         setIsLoading(false)
     }
-
+    
     useEffect(() => {
         getItems()
     }, [])
