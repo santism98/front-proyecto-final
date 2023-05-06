@@ -9,11 +9,11 @@ export const AppRouter = () => {
 
   return (
     <Routes>
-      {!isLoggedIn ? (
+      
         <Route path="/*" element={<RiversRouter />} />
-      ) : (
-        <Route path="/login" element={< AuthRouter/>} />
-      )}
+     
+        <Route path="/login/*" element={< AuthRouter/>} />
+      
     </Routes>
   );
 };

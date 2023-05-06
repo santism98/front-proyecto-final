@@ -1,26 +1,14 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../auth/context/UserContext";
+import { useAuth0 } from "@auth0/auth0-react";
+import { LoginButton } from "../auth/components/Login";
+import { LogoutButton } from "../auth/components/Logout";
 
 export const NavBar = () => {
-  const { isLoggedIn, setisLoggedIn } = useContext(UserContext);
-  const logInUser = () => {
-    setisLoggedIn(false);
-  };
+  const { isAuthenticated, logout } = useAuth0();
+
   return (
     <nav className="bg-green">
       <ul className="flex-row jst-cntr">
-        {/* <li className="mg-md">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "isActive" : ""} `
-            }
-          >
-            Home
-          </NavLink>
-        </li> */}
-
         <li>
           <NavLink
             to="/rios"
@@ -72,11 +60,14 @@ export const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="bg-green" onClick={logInUser}>
-            LogIn
-          </NavLink>
+          {isAuthenticated ? (
+            <LogoutButton onLogout={() => logout({ returnTo: "http://localhost:5173/" })} />
+          ) : (
+            <LoginButton />
+          )}
         </li>
       </ul>
     </nav>
   );
 };
+

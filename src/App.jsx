@@ -7,8 +7,14 @@ function App() {
       <UserProvider>
         <header className="bg-md pd-sm txt-cntr">Header</header>
         <main>
-          <AppRouter />
+      
+
+        <AppRouter />
+
+       
+          
         </main>
+     
         <footer className="bg-md pd-sm txt-cntr">Footer </footer>
       </UserProvider>
     </>

@@ -15,6 +15,15 @@ export const useUserForm = () => {
 
   const [state, setState] = useState([]);
 
+
+  const [editingId, setEditingId] = useState(null); // Nuevo estado
+
+  const handleEdit = (id) => {
+    setEditingId(id);
+  };
+
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
@@ -32,7 +41,10 @@ export const useUserForm = () => {
       });
       const data = await res.json();
       console.log(data);
-  
+
+      // Actualizamos el estado `state` con los nuevos datos
+      setState([...state, data]);
+
       setFormData({
         id: "",
         provincia: "",
@@ -46,7 +58,6 @@ export const useUserForm = () => {
       });
     } catch (err) {
       console.error(err);
-      
     }
   };
 
@@ -61,10 +72,8 @@ export const useUserForm = () => {
       });
       const data = await res.json();
       console.log(data);
-    
     } catch (err) {
       console.error(err);
-      
     }
   };
 
@@ -76,27 +85,26 @@ export const useUserForm = () => {
       const data = await res.json();
       console.log(data);
 
-      newState=state.filter((record) => record.id !== id);
-      
-     setState(newState)
+      setState((prevState) =>
+        prevState.filter((info) => info.id !== id)
+      );
     } catch (err) {
       console.error(err);
-      
     }
   };
 
-  // useEffect(() => {
-  //   const fetchRecords = async () => {
-  //     try {
-  //       const res = await fetch("http://localhost:3000/todos");
-  //       const data = await res.json();
-  //       setRecords(data);
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   };
-  //   fetchRecords();
-  // }, []);
+  useEffect(() => {
+    const fetchInfo = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/todos");
+        const data = await res.json();
+        setState(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchInfo();
+  }, []);
 
   return { formData, handleChange, handleSubmit, handleUpdate, handleDelete, state };
 };

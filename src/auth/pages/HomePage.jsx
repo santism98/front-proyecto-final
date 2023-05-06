@@ -1,16 +1,19 @@
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
+import { LoginButton } from "../components/Login";
+import { LogoutButton } from "../components/Logout";
 
 export const HomePage = () => {
-  const navigate = useNavigate();
+ 
+
+  
+
   return (
-    <section className="mg-md">
-      <h1 className="title">Homepage</h1>
-      <button
-        className="txt-cntr bg-green pd-sm w100 block"
-        onClick={() => navigate("/login")}
-      >
-        Login
-      </button>
-    </section>
+    <>
+  <h1>INICIA SESION PARA REALIZAR CAMBIOS</h1>
+     <LoginButton/>
+     <LogoutButton/>
+    </>
   );
 };
