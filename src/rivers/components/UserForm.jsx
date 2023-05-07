@@ -9,10 +9,10 @@ export const UserForm = () => {
     setEditingId(id);
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    handleUpdate(editingId);
-  };
+  // const handleFormSubmit = (event) => {
+  //   event.preventDefault();
+  //   handleUpdate(editingId);
+  // };
   
   return (
     <div>
@@ -52,7 +52,7 @@ export const UserForm = () => {
         </tbody>
       </table>
       {editingId && (
-        <form onSubmit={handleFormSubmit}>
+        <form >
           <p>Provincia</p>
           <input type="text" name="provincia" value={formData.provincia} onChange={handleChange} />
           <input type="text" name="rio" value={formData.rio} onChange={handleChange} />
