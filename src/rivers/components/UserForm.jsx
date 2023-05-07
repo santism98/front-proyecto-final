@@ -1,14 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useUserForm } from "../hooks/useUserForm";
 
-export const UserForm =()=> {
+export const UserForm = () => {
   const { formData, handleChange, handleSubmit, handleUpdate, handleDelete, state } = useUserForm();
-  const [editingId, setEditingId] = useState(null); // Nuevo estado
+  const [editingId, setEditingId] = useState(null);
 
   const handleEdit = (id) => {
     setEditingId(id);
   };
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    handleUpdate(editingId);
+  };
+  
   return (
     <div>
       <table className="table-container">
@@ -47,8 +52,9 @@ export const UserForm =()=> {
         </tbody>
       </table>
       {editingId && (
-        <form onSubmit={handleUpdate}>
-         <p>Provincia</p> <input  type="text" name="provincia" value={formData.provincia} onChange={handleChange} />
+        <form onSubmit={handleFormSubmit}>
+          <p>Provincia</p>
+          <input type="text" name="provincia" value={formData.provincia} onChange={handleChange} />
           <input type="text" name="rio" value={formData.rio} onChange={handleChange} />
           <input type="text" name="tramo" value={formData.tramo} onChange={handleChange} />
           <input type="text" name="fecha" value={formData.fecha} onChange={handleChange} />
@@ -56,7 +62,10 @@ export const UserForm =()=> {
           <input type="text" name="talla_media" value={formData.talla_media} onChange={handleChange} />
           <input type="text" name="ninfa1" value={formData.ninfa1} onChange={handleChange} />
           <input type="text" name="mosca1" value={formData.mosca1} onChange={handleChange} />
-          <button type="submit">Actualizar</button>
+          <button type="submit" onClick={() => handleUpdate(editingId, formData)}>Actualizar</button>
+
+
+
         </form>
       )}
     </div>

@@ -61,7 +61,8 @@ export const useUserForm = () => {
     }
   };
 
-  const handleUpdate = async (id) => {
+  
+  const handleUpdate = async (id, formData) => {
     try {
       const res = await fetch(`http://localhost:3000/user/actualizar?id=${id}`, {
         method: "PUT",
@@ -70,12 +71,16 @@ export const useUserForm = () => {
         },
         body: JSON.stringify(formData),
       });
+      console.log('este es el id: ', id)
       const data = await res.json();
-      console.log(data);
+      console.log('esto es data', formData);
     } catch (err) {
       console.error(err);
     }
   };
+  
+    
+  
 
   const handleDelete = async (id) => {
     try {
