@@ -73,12 +73,16 @@ export const useUserForm = () => {
       });
       console.log('este es el id: ', id)
       const data = await res.json();
-      console.log('esto es data', formData);
+      console.log('esto es data:', data);
     } catch (err) {
       console.error(err);
     }
   };
   
+
+
+
+
     
   
 

@@ -6,7 +6,9 @@ export const UserForm = () => {
   const [editingId, setEditingId] = useState(null);
 
   const handleEdit = (id) => {
+
     setEditingId(id);
+    console.log(id)
   };
 
   // const handleFormSubmit = (event) => {

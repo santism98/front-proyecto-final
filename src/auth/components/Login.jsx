@@ -1,10 +1,10 @@
 import { useAuth0 } from '@auth0/auth0-react';
 
-function saveDataToLocalStorage(email) {
-    console.log('Guardando el email en localStorage:', email);
-    localStorage.setItem('userEmail', email);
-    console.log('Email guardado en localStorage');
-  }
+// function saveDataToLocalStorage(email) {
+//     console.log('Guardando el email en localStorage:', email);
+//     localStorage.setItem('userEmail', email);
+//    // console.log('Email guardado en localStorage');
+//   }
   
   export const LoginButton = () => {
     const { loginWithRedirect } = useAuth0();
@@ -22,6 +22,6 @@ function saveDataToLocalStorage(email) {
   };
   
 
-// Ejemplo de cómo recuperar el email guardado
-const userEmail = localStorage.getItem('userEmail');
-console.log(userEmail);
+// // Ejemplo de cómo recuperar el email guardado
+// const userEmail = localStorage.getItem('userEmail');
+// console.log(userEmail);
