@@ -16,18 +16,18 @@ export const SearchForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="tipoBusqueda">Tipo de búsqueda:</label>
-        <select id="tipoBusqueda" value={tipoBusqueda} onChange={(e) => setTipoBusqueda(e.target.value.toLocaleLowerCase())}>
-          <option value="rio">Río</option>
-          <option value="tramo">Tramo</option>
-          <option value="provincia">Provincia</option>
-          <option value="bigger">Bigger</option>
-        </select>
-        <label htmlFor="provincia">Busqueda:</label>
-        <input type="text" id="provincia" value={provincia} onChange={(e) => setProvincia(e.target.value.toUpperCase())} />
-        <button type="submit">Buscar</button>
-      </form>
-      <div className="card-container">
+  <label for="tipoBusqueda">Tipo de búsqueda:</label>
+  <select id="tipoBusqueda" value={tipoBusqueda} onChange={(e) => setTipoBusqueda(e.target.value.toLocaleLowerCase())}>
+    <option value="rio">Río</option>
+    <option value="tramo">Tramo</option>
+    <option value="provincia">Provincia</option>
+    <option value="bigger">Bigger</option>
+  </select>
+  <label for="provincia">Busqueda:</label>
+  <input type="text" id="provincia" value={provincia} onChange={(e) => setProvincia(e.target.value.toUpperCase())} />
+  <button type="submit">Buscar</button>
+</form>
+      <div className="grid-container">
       <h3>Te recomendamos:</h3>
         {resultados.length > 0 ? (
           resultados.map((resultado) => (

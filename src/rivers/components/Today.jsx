@@ -16,7 +16,7 @@ export const Today = () => {
       <form onSubmit={handleSubmit}>
         <button type="submit">PULSA AQUÍ PARA VER DÓNDE PUEDES PESCAR HOY</button>
       </form>
-      <div className="card-container">
+      <div className="grid-container">
         {resultados.length > 0 ? (
           resultados.map((resultado) => (
             <ResultCard key={resultado.id} resultado={resultado} />

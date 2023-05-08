@@ -1,7 +1,6 @@
 
-
 :root {
-  --green: #38cc7d;
+  --green: #2ea09e;
   --medium: #e6e0e0;
   --light: #fff;
   --shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
@@ -215,17 +214,15 @@ input[type="submit"] {
 }
 
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
+
+
 
 .card {
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
 }
 
 .card img {
@@ -258,6 +255,147 @@ input[type="submit"] {
 .card button:hover {
   background-color: #555;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: block;
+  width: 100%;
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+select, input[type="text"], button {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+
+select:focus, input[type="text"]:focus {
+  outline: none;
+  border-color: #4d90fe;
+  box-shadow: 0px 0px 4px #4d90fe;
+}
+
+button {
+  background-color: #4d90fe;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #357ae8;}
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1500px;
+  margin: 0 auto;
+  }
+  
+
+
+
+/*/*/
+
+
+/* Icono del menú */
+.menu-icon {
+  display: none; /* Ocultar en pantallas grandes */
+}
+
+@media (max-width: 768px) {
+  /* Mostrar el icono del menú en pantallas pequeñas */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+  }
+}
+
+/* Lista de elementos de navegación */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Elementos de navegación */
+li {
+  margin: 0 10px;
+}
+
+/* Enlaces de navegación */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Estilo para el enlace activo */
+.isActive {
+  color: #f00;
+}
+
+
+
+.user-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+}
+
+.user-table td, .user-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f2f2f2;
+}
+
+.delete-button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+
+  
+
+
 
 /* ========================= */
 /* 768 */

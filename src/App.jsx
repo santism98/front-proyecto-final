@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <UserProvider>
-        <header className="bg-md pd-sm txt-cntr">Header</header>
+        <header className="bg-md pd-sm txt-cntr"></header>
         <main>
       
 
@@ -15,7 +15,7 @@ function App() {
           
         </main>
      
-        <footer className="bg-md pd-sm txt-cntr">Footer </footer>
+        <footer className="bg-md pd-sm txt-cntr"></footer>
       </UserProvider>
     </>
   );

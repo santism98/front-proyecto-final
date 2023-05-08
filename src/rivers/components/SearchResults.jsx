@@ -1,47 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from 'react';
 
-import { useNavigate } from "react-router-dom";
+import { ResultCard } from './CardResult';
+export const SearchResults = () => {
+  const [resultados, setResultados] = useState([]);
 
-
-export const SearchResults = ({ searchTerm, category = "" }) => {
-  const navigate = useNavigate();
-
-  const [rivers, setRivers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchRivers = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch("http://localhost:3000/size");
-        const data = await response.json();
-        setRivers(data);
-        setIsLoading(false);
-        console.log(data)
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchRivers();
-  }, []);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`http://localhost:3000/bigger`); // Cambiar la fecha por la que se quiera buscar
+    const data = await response.json();
+    setResultados(data);
+  };
 
   return (
     <>
+      <form onSubmit={handleSubmit}>
+        <button type="submit">LOS MEJORES TRAMOS DE PESCA HASTA AHORA SEGÚN NUESTROS USUARIOS</button>
+      </form>
       <div className="grid-container">
-        {rivers.length > 0 ? (
-          rivers.map((river) => (
-            <div className="card" key={river.id}>
-              <h2>{river.rio}</h2>
-              <p className="tramo">
-                <strong>Tramo:</strong> {river.tramo}
-              </p>
-              <p className="capturas">
-                <strong>Capturas:</strong> {river.capturas_rs}
-              </p>
-            </div>
+        {resultados.length > 0 ? (
+          resultados.map((resultado) => (
+            <ResultCard key={resultado.id} resultado={resultado} />
           ))
         ) : (
-          <p>No hay resultados</p>
+          <p className='error'>HOY NO SE PESCA</p>
         )}
       </div>
     </>

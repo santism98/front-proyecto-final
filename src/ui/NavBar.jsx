@@ -7,13 +7,18 @@ export const NavBar = () => {
   const { isAuthenticated, logout } = useAuth0();
 
   return (
+    
     <nav className="bg-green">
+      
+      <div className="menu-icon">
+        <i className="fa fa-bars"></i>
+      </div>
       <ul className="flex-row jst-cntr">
         <li>
           <NavLink
             to="/rios"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "isActive" : ""} `
+              `nav-link letra-nav ${isActive ? "isActive" : ""} `
             }
           >
             Home
@@ -23,7 +28,7 @@ export const NavBar = () => {
           <NavLink
             to="/search"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "isActive" : ""} `
+              `nav-link letra-nav ${isActive ? "isActive" : ""} `
             }
           >
             Consejos
@@ -33,7 +38,7 @@ export const NavBar = () => {
           <NavLink
             to="/mapa"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "isActive" : ""} `
+              `nav-link letra-nav ${isActive ? "isActive" : ""} `
             }
           >
             Mapa
@@ -43,7 +48,7 @@ export const NavBar = () => {
           <NavLink
             to="/today"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "isActive" : ""} `
+              `nav-link letra-nav ${isActive ? "isActive" : ""} `
             }
           >
             ¿DÓNDE VOY HOY?
@@ -53,7 +58,7 @@ export const NavBar = () => {
           <NavLink
             to="/ranking"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "isActive" : ""} `
+              `nav-link letra-nav ${isActive ? "isActive" : ""} `
             }
           >
             Ranking de tramos
@@ -70,4 +75,3 @@ export const NavBar = () => {
     </nav>
   );
 };
-
