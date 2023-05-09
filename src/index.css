@@ -1,3 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
 
 :root {
   --green: #2ea09e;
@@ -217,44 +224,7 @@ input[type="submit"] {
 
 
 
-.card {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  max-width: 100%;
-}
 
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.card h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.card button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background-color: #555;
-}
 
 .grid-container {
   display: grid;
@@ -262,10 +232,7 @@ input[type="submit"] {
   gap: 20px;
 }
 
-.card {
-  display: block;
-  width: 100%;
-}
+
 
 
 
@@ -323,15 +290,27 @@ button:hover {
   display: none; /* Ocultar en pantallas grandes */
 }
 
-@media (max-width: 768px) {
-  /* Mostrar el icono del menú en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .menu-list {
+    display: none;
+  }
   .menu-icon {
+    display: flex;
+  }
+
+  .menu-list {
+    display: none;
+  }
+  .menu-icon {
+    display: flex;
+  }
+  #toggle:checked ~ .menu-list {
     display: block;
-    cursor: pointer;
-    color: #fff;
-    font-size: 24px;
   }
 }
+
+
+
 
 /* Lista de elementos de navegación */
 ul {
@@ -358,39 +337,14 @@ li {
 
 /* Estilo para el enlace activo */
 .isActive {
-  color: #f00;
-}
+  color: rgb(3, 2, 58);
+  background-color: #e6e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  }
 
 
 
-.user-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 800px;
-}
-
-.user-table td, .user-table th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.user-table th {
-  background-color: #f2f2f2;
-}
-
-.delete-button {
-  background-color: #ff0000;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.delete-button:hover {
-  background-color: #cc0000;
-}
 
 
   

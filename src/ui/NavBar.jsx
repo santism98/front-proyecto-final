@@ -9,11 +9,11 @@ export const NavBar = () => {
   return (
     
     <nav className="bg-green">
-      
-      <div className="menu-icon">
-        <i className="fa fa-bars"></i>
-      </div>
-      <ul className="flex-row jst-cntr">
+  <div className="menu-icon">
+    <label htmlFor="toggle">&#9776;</label>
+  </div>
+  <input type="checkbox" id="toggle"/>
+  <ul id="menu-list" className="menu-list flex-row jst-cntr">
         <li>
           <NavLink
             to="/rios"

@@ -13,22 +13,17 @@ export const SearchPage = () => {
 
   return (
     <>
-    <section className="mg-lg">
-      <h1 className="txt-cntr">BUSCA POR TRAMO {category}</h1>
-      
-      <SearchForm addSearch={addSearch} />
-      
-      
-      {searchTerm && (
-        <SearchResults searchTerm={searchTerm} category={category} />
-      )}
-     
-    </section>
+      <section className="my-8">
+        <h1 className="text-center text-3xl font-bold mb-4">BUSCA POR TRAMO {category}</h1>
 
-        
+        <div className="max-w-3xl mx-auto">
+          <SearchForm addSearch={addSearch} />
 
-
+          {searchTerm && (
+            <SearchResults searchTerm={searchTerm} category={category} />
+          )}
+        </div>
+      </section>
     </>
   );
-
 };

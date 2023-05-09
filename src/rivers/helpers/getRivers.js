@@ -1,3 +1,14 @@
+/**
+
+Obtiene la información de los ríos a través de una petición HTTP GET.
+@async
+@function getRivers
+@param {string} url - La URL de la API a la que se hará la petición.
+@returns {Promise<{searchrivers: Array, prodTotal: number|null}>} - Una promesa que devuelve un objeto con un array de objetos de los ríos y un número que representa la cantidad total de productos o null si ocurrió un error al realizar la petición.
+*/
+
+
+
 import {connection } from "../apis/connection"
 
 export const getRivers = async (url) => {

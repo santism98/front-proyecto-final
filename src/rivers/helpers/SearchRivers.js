@@ -1,3 +1,14 @@
+/**
+
+Función que realiza la búsqueda de ríos en base a un término y una categoría.
+@function
+@param {string} searchTerm - Término de búsqueda.
+@param {string} category - Categoría de búsqueda.
+@returns {object} Objeto con el resultado de la búsqueda y si se está cargando o no.
+*/
+
+
+
 import { useFetch } from "../hooks/useFetch";
 import { useContext } from "react";
 import { RiverContext } from "../context/RiverContext";

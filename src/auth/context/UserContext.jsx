@@ -1,4 +1,8 @@
 import { createContext } from "react";
 
-//createContext recibe como argunento el valor inicial
+/**
+ * Contexto para el estado del usuario.
+ *
+ * @type {React.Context}
+ */
 export const UserContext = createContext();

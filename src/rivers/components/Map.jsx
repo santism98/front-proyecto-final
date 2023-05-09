@@ -6,36 +6,34 @@ import "leaflet/dist/leaflet.css";
 export const Mapa = () => {
   const [markers, setMarkers] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await fetch("http://localhost/todos");
-  //     const data = await response.json();
-  //     setMarkers(data);
-  //   };
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("https://bac-proyecto-final.onrender.com/coord");
+      const data = await response.json();
+      setMarkers(data);
+    };
+    fetchData();
+  }, []);
 
   const icon = L.icon({
-    iconUrl: "https://as1.ftcdn.net/v2/jpg/01/70/63/68/1000_F_170636872_RhGjPZx1Dt6kkcDqfFr5oaFeZBNuCMYU.jpg", // URL de la imagen de icono personalizado
-    iconSize: [95, 95], // Tamaño del icono
-    iconAnchor: [22, 94], // Posición de anclaje del icono
-    popupAnchor: [-3, -76], // Posición de anclaje del popup
+    iconUrl: "https://as1.ftcdn.net/v2/jpg/01/70/63/68/1000_F_170636872_RhGjPZx1Dt6kkcDqfFr5oaFeZBNuCMYU.jpg",
+    iconSize: [95, 95],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
   });
-  console.log('este es el icon:', icon)
 
   return (
-    <MapContainer center={[40.49390321319127, -2.918981857202698]} zoom={13} style={{ height: "500px" }}>
+    <MapContainer center={[42.53125302957343, -5.8680262289283505]} zoom={13} style={{ height: "500px" }}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      {/* {markers.map((marker) => ( */}
-        <Marker position={[40.49390321319127, -2.918981857202698]} icon={icon}>
+      {markers.map((marker) => (
+        <Marker key={marker.id} position={[marker.coordenadas[0], marker.coordenadas[1]]} icon={icon}>
           <Popup>
-            casa
-            {/* Río: {marker.data.rio}           
+            Río: {marker.rio}
             <br />
-            Tramo: {marker.data.tramo} */}
+            Tramo: {marker.tramo}
           </Popup>
         </Marker>
-      {/* ))} */}
+      ))}
     </MapContainer>
   );
 };

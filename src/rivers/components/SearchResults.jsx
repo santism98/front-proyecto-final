@@ -6,7 +6,7 @@ export const SearchResults = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`http://localhost:3000/bigger`); // Cambiar la fecha por la que se quiera buscar
+    const response = await fetch(`https://bac-proyecto-final.onrender.com/bigger`); // Cambiar la fecha por la que se quiera buscar
     const data = await response.json();
     setResultados(data);
   };
@@ -14,7 +14,7 @@ export const SearchResults = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <button type="submit">LOS MEJORES TRAMOS DE PESCA HASTA AHORA SEGÚN NUESTROS USUARIOS</button>
+        <button type="submit bg-blue-500">LOS MEJORES TRAMOS DE PESCA HASTA AHORA SEGÚN NUESTROS USUARIOS</button>
       </form>
       <div className="grid-container">
         {resultados.length > 0 ? (

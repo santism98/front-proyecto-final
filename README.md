@@ -10,18 +10,36 @@ Dependencies (and versions) used:
 
 
 
-To start project:
+Para empezar el proyecto:
 
-- In terminal, navigate to the folder with the project
+- Ejecuta CMD como administrador
 
-- install yarn = (write 'yarn' in the terminal)
+- Dirígete hasta la carpeta del proyecto:
+`cd 'ruta_del_proyecto'`
 
-- start the program = (write 'yarn dev' in the terminal)
+- escribe en la consola:
 
-- open localhost with port number as directed by prompts in terminal
+`yarn dev`
 
-- ready to start!
+- Abre el navegador en el puerto indicado por consola
 
-## Deployed site:
 
-https://river-search.netlify.app/
+## Resumen del proyecto:
+
+- Se trata de una SPA que ayuda a los pescadores a decidir dónde y como ir a pasar un buen día
+
+- Para ello se utilizan dos bases de datos (usuarios y datos obtenidos)
+
+- Cada usuario puede añadir datos que se irán cruzando con los anterioires para obtener predicciones más precisas
+
+## Tecnologías utilizadas:
+
+- React
+
+- TileWind
+
+- Leaflet
+
+
+
+
